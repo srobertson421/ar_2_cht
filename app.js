@@ -3,7 +3,21 @@
   const codesContainer = document.getElementById('codes');
   const newCodeNameInput = document.getElementById('new-code-name');
   const newCodeButton = document.getElementById('add-code');
+  const downloadButton = document.getElementById('download-btn');
   const frontPatterns = ['001', '002', '003', '004', '022'];
+
+  function generateCHT() {
+    const chtText = cheats.map(cheat => {
+      return `\n[${cheat.name}]\nON=${cheat.converted}\n`;
+    }).join('');
+
+    const chtFile = new Blob([chtText.trim()], {type: 'text/plain'});
+    const chtURL = window.URL.createObjectURL(chtFile);
+
+    downloadButton.parentNode.href = chtURL;
+    downloadButton.innerText = '.cht File Ready for Download!';
+    downloadButton.disabled = false;
+  }
 
   function addCheat(name) {
     cheats.push({
@@ -142,4 +156,6 @@
     addCheat(newCodeName || `Code ${cheats.length + 1}`);
     newCodeNameInput.value = '';
   });
+
+  document.getElementById('file-btn').addEventListener('click', generateCHT);
 })()
