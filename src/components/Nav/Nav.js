@@ -42,6 +42,9 @@ const Nav = ({ user }) => {
           <Sidebar.Item text="Cheats" icon="gamepad" LinkRender={props => {
             return <NavLink onClick={() => setOpen(false)} exact to="/cheats">{ props.children }</NavLink>;
           }} />
+          <Sidebar.Item text="EZ-Flash Original Cheats" icon="exclamation-circle" LinkRender={props => {
+            return <NavLink onClick={() => setOpen(false)} exact to="/ez-flash-cheats">{ props.children }</NavLink>;
+          }} />
           <Sidebar.Item text="Tutorial" icon="book" LinkRender={(props) => {
             return <NavLink onClick={() => setOpen(false)} exact to="/tutorial">{ props.children }</NavLink>;
           }} />

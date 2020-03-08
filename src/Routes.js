@@ -13,6 +13,8 @@ const Profile = lazy(() => import('./views/Profile'));
 const Cheats = lazy(() => import('./views/Cheats'));
 const GameView = lazy(() => import('./views/GameView'));
 const CheatView = lazy(() => import('./views/CheatView'));
+const OriginalCheats = lazy(() => import('./views/OriginalCheats'));
+const OriginalCheatView = lazy(() => import('./views/OriginalCheatView'));
 const NotFound = lazy(() => import('./views/NotFound'));
 
 const injectUserToRoute = (user, routeProps, Component) => {
@@ -51,7 +53,8 @@ const Routes = () => {
                   <Route path="/cheats/:game/:cheat" render={routeProps => injectUserToRoute(user, routeProps, CheatView)} />
                   <Route path="/cheats/:game" render={routeProps => injectUserToRoute(user, routeProps, GameView)} />
                   <Route path="/cheats" render={routeProps => injectUserToRoute(user, routeProps, Cheats)} />
-                  <Route path="/*" component={NotFound} />
+                  <Route path="/ez-flash-cheats/:id/:gameName" render={routeProps => injectUserToRoute(user, routeProps, OriginalCheatView)} />
+                  <Route path="/ez-flash-cheats" render={routeProps => injectUserToRoute(user, routeProps, OriginalCheats)} />
                   { user && (
                     <>
                       <Route path="/profile" render={routeProps => injectUserToRoute(user, routeProps, Profile)} />
@@ -63,6 +66,7 @@ const Routes = () => {
                       <Route path="/signup" render={routeProps => injectUserToRoute(user, routeProps, Signup)} />
                     </>
                   ) }
+                  <Route path="/*" component={NotFound} />
                 </Switch>
               </Suspense>
             </Grid.Column>
