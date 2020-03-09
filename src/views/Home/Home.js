@@ -14,7 +14,7 @@ const Home = ({ user, history }) => {
       <Grid.Column size="12">
         <Image src={logo} alt="CHT Database Logo" />
         { user && (
-          <Title textAlign="center">Welcome ${user.email}</Title>
+          <Title textAlign="center">Welcome {user.email}</Title>
         ) }
       </Grid.Column>
       { !user && (
