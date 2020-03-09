@@ -63,6 +63,12 @@ const Signup = ({ history, location }) => {
           </FormPanel>
         </form>
       </Grid.Column>
+      <Grid.Column size="8" offset="2" sm="10" offsetSm="1">
+        <Title tagName="h4" textAlign="center">
+          DISCLAIMER: This site will never sell your email, information, or activity to a third-party. 
+          There are no cookies or analytics on this site and never will be. Thanks for trying out the site!
+        </Title>
+      </Grid.Column>
     </Grid>
   );
 }
