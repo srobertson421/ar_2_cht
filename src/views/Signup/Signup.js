@@ -5,7 +5,8 @@ import {
   FormGroup,
   Label,
   Input,
-  Button
+  Button,
+  Title,
 } from 'beautiful-react-ui';
 import AuthState from '../../state/AuthState';
 
@@ -26,36 +27,41 @@ const Signup = ({ history, location }) => {
 
   return (
     <Grid>
+      <Grid.Column size="12">
+        <Title textAlign="center">Signup</Title>
+      </Grid.Column>
       <Grid.Column size="8" offset="2" sm="10" offsetSm="1">
-        <FormPanel label="SIGNUP" labelType="title">
-        <FormGroup>
-            <Label htmlFor="email">Email</Label>
-            <Input
-              id="email"
-              name="email"
-              type="email"
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-              fluid
-              placeholder="Enter your email"
-            />
-          </FormGroup>
-          <FormGroup>
-            <Label htmlFor="password">Password</Label>
-            <Input
-              id="password"
-              name="password"
-              type="password"
-              value={password}
-              onChange={e => setPassword(e.target.value)}
-              fluid
-              placeholder="Enter your password"
-            />
-          </FormGroup>
-          <FormGroup>
-            <Button type="submit" color="primary">Signup</Button>
-          </FormGroup>
-        </FormPanel>
+        <form onSubmit={handleSignup}>
+          <FormPanel label="SIGNUP" labelType="title">
+            <FormGroup>
+              <Label htmlFor="email">Email</Label>
+              <Input
+                id="email"
+                name="email"
+                type="email"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+                fluid
+                placeholder="Enter your email"
+              />
+            </FormGroup>
+            <FormGroup>
+              <Label htmlFor="password">Password</Label>
+              <Input
+                id="password"
+                name="password"
+                type="password"
+                value={password}
+                onChange={e => setPassword(e.target.value)}
+                fluid
+                placeholder="Enter your password"
+              />
+            </FormGroup>
+            <FormGroup>
+              <Button type="submit" color="primary">Signup</Button>
+            </FormGroup>
+          </FormPanel>
+        </form>
       </Grid.Column>
     </Grid>
   );

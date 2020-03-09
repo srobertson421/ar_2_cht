@@ -8,7 +8,7 @@ const Profile = () => {
   return (
     <Grid>
       <Grid.Column sm="12">
-        <Title>Profile</Title>
+        <Title textAlign="center">Profile</Title>
       </Grid.Column>
     </Grid>
   );

@@ -43,10 +43,6 @@ const OriginalCheatView = ({ user, history, match: { params } }) => {
         });
       }
     }
-
-    if(currentGame) {
-      console.log(currentGame);
-    }
   }, [games, currentGame]);
 
   const downloadCHT = () => {

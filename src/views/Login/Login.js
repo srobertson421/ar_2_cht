@@ -5,7 +5,8 @@ import {
   FormGroup,
   Label,
   Input,
-  Button
+  Button,
+  Title,
 } from 'beautiful-react-ui';
 import AuthState from '../../state/AuthState';
 
@@ -26,6 +27,9 @@ const Login = ({ history, location }) => {
 
   return (
     <Grid>
+      <Grid.Column size="12">
+        <Title textAlign="center">Login</Title>
+      </Grid.Column>
       <Grid.Column size="8" offset="2" sm="10" offsetSm="1">
         <form onSubmit={handleLogin}>
           <FormPanel label="LOGIN" labelType="title">

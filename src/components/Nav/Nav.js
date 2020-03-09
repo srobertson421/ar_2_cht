@@ -6,6 +6,7 @@ import AuthState from '../../state/AuthState';
 const navContainerStyles = {
   position: 'fixed',
   height: '100vh',
+  pointerEvents: 'none',
   left: 0,
   top: 0,
   zIndex: 98,
@@ -22,6 +23,7 @@ const Nav = ({ user }) => {
       <Button color="primary" style={{ zIndex: 99, visibility: open ? 'hidden' : 'inherit' }} onClick={() => setOpen(true)} icon="bars" />
       <div style={navContainerStyles}>
         <Sidebar
+          style={{ pointerEvents: 'initial' }}
           isOpen={open}
           onToggle={() => setOpen(!open)}
           toggleIcon={open ? 'times' : 'bars'}
@@ -30,7 +32,7 @@ const Nav = ({ user }) => {
           titleColor="success"
           type="offcanvas"
           NavRender={({ className, children }) => {
-            return <nav style={{ backgroundColor: '#f8f8f8' }} className={className}>{children}</nav>
+            return <nav style={{ backgroundColor: '#f8f8f8', pointerEvents: 'initial' }} className={className}>{children}</nav>
           }}
         >
           <Sidebar.Item text="Home" icon="home" LinkRender={(props) => {

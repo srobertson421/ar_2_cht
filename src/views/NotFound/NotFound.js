@@ -8,7 +8,7 @@ const NotFound = () => {
   return (
     <Grid>
       <Grid.Column sm="12">
-        <Title>404 Not Found</Title>
+        <Title textAlign="center">404 Not Found</Title>
       </Grid.Column>
     </Grid>
   );

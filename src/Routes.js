@@ -41,17 +41,16 @@ const Routes = () => {
       { !isAuthenticating && !authError && (
         <Router>
           <Grid>
-            <Grid.Column size="2" sm="12">
+            <Grid.Column md="2" lg="2" xl="2" sm="12">
               <Nav user={user} />
             </Grid.Column>
-            <Grid.Column size="10" sm="11" offsetSm="1">
+            <Grid.Column md="10" lg="10" xl="10" sm="12">
               <Suspense fallback={<Spinner type="pulse" color="primary" size="large" />}>
                 <Switch>
                   <Route path="/" exact render={routeProps => injectUserToRoute(user, routeProps, Home)} />
                   <Route path="/converter" render={routeProps => injectUserToRoute(user, routeProps, Converter)} />
                   <Route path="/tutorial" render={routeProps => injectUserToRoute(user, routeProps, Tutorial)} />
-                  <Route path="/cheats/:game/:cheat" render={routeProps => injectUserToRoute(user, routeProps, CheatView)} />
-                  <Route path="/cheats/:game" render={routeProps => injectUserToRoute(user, routeProps, GameView)} />
+                  <Route path="/cheats/:id/:gameName" render={routeProps => injectUserToRoute(user, routeProps, GameView)} />
                   <Route path="/cheats" render={routeProps => injectUserToRoute(user, routeProps, Cheats)} />
                   <Route path="/ez-flash-cheats/:id/:gameName" render={routeProps => injectUserToRoute(user, routeProps, OriginalCheatView)} />
                   <Route path="/ez-flash-cheats" render={routeProps => injectUserToRoute(user, routeProps, OriginalCheats)} />

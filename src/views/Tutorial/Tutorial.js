@@ -8,7 +8,8 @@ const Tutorial = () => {
   return (
     <Grid>
       <Grid.Column sm="12">
-        <Title>Tutorial</Title>
+        <Title textAlign="center">Tutorial</Title>
+        <Title textAlign="center" tagName="h3">Coming Soon!!</Title>
       </Grid.Column>
     </Grid>
   );

@@ -28,8 +28,8 @@ const OriginalCheats = () => {
     <>
       <Grid>
         <Grid.Column sm="12">
-          <Title>EZ-Flash Original CHT files</Title>
-          <Title tagName="h4">WARNING: Only slightly edited from original download from EZ-Flash site. Lots of missing data, wrong regions, etc. Use at own risk!</Title>
+          <Title textAlign="center">EZ-Flash Original CHT files</Title>
+          <Title textAlign="center" tagName="h4">WARNING: Only slightly edited from original download from EZ-Flash site. Lots of missing data, wrong regions, etc. Use at own risk!</Title>
         </Grid.Column>
       </Grid>
 
